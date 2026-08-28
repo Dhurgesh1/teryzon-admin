@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090807">
+  <title>Admin Console | Teryzon</title>
+  <link rel="icon" type="image/png" href="../images/Horizons mini logo (1).png">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="/admin/admin.css">
+  <link rel="stylesheet" href="../assets/css/chatbot.css">
+  <script src="../assets/js/theme-early.js"></script>
+  <script src="../assets/js/chatbot.js" defer></script>
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="/"><span class="admin-mark">T</span> Teryzon</a>
+      <button class="admin-menu-toggle" id="admin-menu-toggle" type="button" aria-label="Toggle admin navigation">Menu</button>
+      <nav class="admin-nav" aria-label="Admin navigation">
+        <div class="admin-nav-label">Overview</div><a class="is-active" href="/admin">Dashboard</a>
+        <div class="admin-nav-label">Customer management</div><a href="/admin/tickets">Support tickets</a><a href="/admin/users">Users</a><a href="#feedback">Feedback</a>
+        <div class="admin-nav-label">Website</div><a href="/admin/announcements">Announcements</a>
+      </nav>
+      <div class="admin-sidebar-bottom"><button class="admin-button secondary" id="admin-signout" type="button">Sign out</button></div>
+    </aside>
+    <main class="admin-main">
+      <header class="admin-topbar"><div><span class="admin-kicker">Operations / Overview</span><h1 class="admin-title">Good to see you.</h1><p class="admin-subtitle">A live view of Teryzon customer activity and support.</p></div><div class="admin-user"><span class="admin-avatar">T</span><div><strong id="admin-name">Loading...</strong><small id="admin-role">Checking access</small></div></div></header>
+      <p id="admin-status" class="admin-subtitle" role="status">Connecting to Supabase...</p>
+      <section class="admin-grid" aria-label="Key metrics"><article class="admin-card"><span class="admin-card-label">Total users</span><strong class="admin-card-value" id="metric-users">—</strong><span class="admin-card-detail">Registered profiles</span></article><article class="admin-card admin-card-accent"><span class="admin-card-label">Open tickets</span><strong class="admin-card-value" id="metric-open">—</strong><span class="admin-card-detail">Needs attention</span></article><article class="admin-card"><span class="admin-card-label">High priority</span><strong class="admin-card-value" id="metric-urgent">—</strong><span class="admin-card-detail">High or urgent</span></article><article class="admin-card"><span class="admin-card-label">Published news</span><strong class="admin-card-value" id="metric-announcements">—</strong><span class="admin-card-detail">Active announcements</span></article></section>
+      <div class="admin-layout"><section class="admin-section" id="tickets"><div class="admin-section-heading"><h2>Recent support tickets</h2><span>Latest 8</span></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Ticket</th><th>Customer</th><th>Category</th><th>Status</th><th>Created</th></tr></thead><tbody id="ticket-list"><tr><td colspan="5" class="admin-loading">Loading tickets...</td></tr></tbody></table></div></section><section class="admin-section" id="feedback"><div class="admin-section-heading"><h2>Recent feedback</h2><span>Latest 5</span></div><ul id="feedback-list" class="admin-feedback-list"><li class="admin-loading">Loading feedback...</li></ul></section></div>
+      <section class="admin-section" id="announcements" style="margin-top:18px"><div class="admin-section-heading"><h2>Announcements</h2><span>Latest 5</span></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Title</th><th>Type</th><th>Status</th><th>Created</th></tr></thead><tbody id="announcement-list"><tr><td colspan="4" class="admin-loading">Loading announcements...</td></tr></tbody></table></div></section>
+    </main>
+  </div>
+  <script type="module" src="/admin/admin.js"></script>
+</body>
+</html>
